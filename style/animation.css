@@ -1,0 +1,17 @@
+@keyframes floating-plate {
+    0% {
+        box-shadow: 20px 20px 30px #CBD2D4;
+    }
+    23% {
+        box-shadow: 30px 30px 40px #CBD2D4;
+    }
+    50% {
+        box-shadow: 10px 10px 18px #CBD2D4;
+    }
+    78% {
+        box-shadow: 30px 30px 40px #CBD2D4;
+    }
+    100% {
+        box-shadow: 20px 20px 30px #CBD2D4;
+    }
+}

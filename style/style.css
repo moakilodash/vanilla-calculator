@@ -1,0 +1,132 @@
+/*
+    // COLORS
+        primary and accent [purple]: #4B017A, #9B3DE3, #D3BDE9, #E1D5E9
+        primary and accent [orange]: #FDB82D, #A68F60, #EBC276, #E8DCC7
+        highlights: #57768A, #CBD2D4, #E3E7EA, #FEFEFE, #E8EDEE, #FDFDFD, 
+            #F2F4F5, #ffffff, #F3EFE3 
+
+    // FONT
+        family: Roboto, Comfortaa
+        weight: 300, 400, 500, 700, 900
+        size: 1.2rem, 2,2rem,
+
+    // MARGIN, PADDING
+        10px, 20px, 40px, 100px
+
+    // RADIUS
+        38px, 20px
+
+    // ANIMATION
+        - floating
+*/
+:root {
+    --button-width: 70px;
+    --button-height: 60px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    /* font-family: Roboto; */
+    font-weight: 400;
+    font-size: 1.1rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to top, #E3E7EA, #FEFEFE);
+}
+
+
+h1 {
+    font-family: 'Comfortaa', sans-serif;
+    margin: 40px;
+    font-size: 1.5rem;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-weight: 300;
+    background-color: #F2F4F5;
+    color: #57768A;
+    display: inline-block;
+    font-size: 1.2rem;
+    border-radius: 38px;
+    box-shadow: 3px 3px 6px #CBD2D4, -3px -3px 6px #ffffff;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 90vh;
+}
+
+.calc-grid {
+    animation-name: floating-plate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin: 15vh auto;
+    padding: 20px;
+    border-radius: 20px;
+    background: linear-gradient(to top, #E8EDEE, #FDFDFD);
+    width: fit-content;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, var(--button-width));
+    grid-template-rows: minmax(120px, auto) repeat(6, var(--button-height))
+}
+
+.output {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(0,  0, 0, 0.041);
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.span-2-vertical {
+    grid-row: span 2;
+}
+
+.non-functionable {
+    background-color: #F3EFE3;
+    color: #A68F60;
+    box-shadow: 3px 3px 6px #E8DCC7, -4px -4px 4px #ffffff;
+}
+
+.clear-button {
+    background-color: #FDB82D;
+    box-shadow: 2.5px .52px 6px #EBC276, -4px -4px 4px #ffffff;
+    color: #ffffff;
+}
+
+.equal-button {
+    font-size: 2.2rem;
+    background-color: #9C2CF3;
+    color: #ffffff;
+    box-shadow: 2.5px .52px 6px #9B3DE3, -4px -4px 4px #ffffff;
+}
+
+.math_operation-button {
+    background-color: #E1D5E9;
+    color: #4B017A;
+    
+    box-shadow: 3px 3px 6px #D3BDE9, -4px -4px 4px #ffffff;
+}
+
+.output-history {
+    color:#CBD2D4;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.output-results {
+    font-size: 2.2rem;
+    font-weight: 700;
+}

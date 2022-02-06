@@ -1,0 +1,24 @@
+button:hover {
+    transition: box-shadow .42s ease-in-out;
+    box-shadow: 4px 4px 10px #CBD2D4, -3px -3px 6px #ffffff;
+}
+
+.non-functionable:hover {
+    transition: box-shadow .42s ease-in-out;
+    box-shadow: 4px 4px 10px #E8DCC7, -4px -4px 4px #ffffff;
+}
+
+.clear-button:hover {
+    transition: box-shadow .42s ease-in-out;
+    box-shadow: 3px 1.2px 10px #EBC276, -4px -4px 4px #ffffff;
+}
+
+.equal-button:hover {
+    transition: box-shadow .42s ease-in-out;
+    box-shadow: 3px 1.2px 10px #9B3DE3, -4px -4px 4px #ffffff;
+}
+
+.math_operation-button:hover {
+    transition: box-shadow .42s ease-in-out;
+    box-shadow: 4px 4px 10px #D3BDE9, -4px -4px 4px #ffffff;
+}

@@ -1,0 +1,25 @@
+
+button:active {
+    transition: box-shadow .06s;
+    box-shadow: 3px 3px 2px #CBD2D4, -3px -3px 6px #ffffff;
+}
+
+.non-functionable:active {
+    transition: box-shadow .06s;
+    box-shadow: 3px 3px 2px #E8DCC7, -4px -4px 4px #ffffff;
+}
+
+.clear-button:active {
+    transition: box-shadow .1s;
+    box-shadow: 1px .56px 2px #EBC276, -4px -4px 4px #ffffff;
+}
+
+.equal-button:active {
+    transition: box-shadow .1s;
+    box-shadow: 1px .56px 2px #9B3DE3, -4px -4px 4px #ffffff;
+}
+
+.math_operation-button:active {
+    transition: box-shadow .06s;
+    box-shadow: 3px 3px 2px #D3BDE9, -4px -4px 4px #ffffff;
+}
