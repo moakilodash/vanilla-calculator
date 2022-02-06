@@ -15,10 +15,10 @@ button:hover {
 
 .equal-button:hover {
     transition: box-shadow .42s ease-in-out;
-    box-shadow: 3px 1.2px 10px #9B3DE3, -4px -4px 4px #ffffff;
+    box-shadow: 3px 1.2px 10px var(--random-bg-color-primary), -4px -4px 4px #ffffff;
 }
 
 .math_operation-button:hover {
     transition: box-shadow .42s ease-in-out;
-    box-shadow: 4px 4px 10px #D3BDE9, -4px -4px 4px #ffffff;
+    box-shadow: 4px 4px 10px var(--random-bg-color-accent), -4px -4px 4px #ffffff;
 }
