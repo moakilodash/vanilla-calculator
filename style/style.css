@@ -1,6 +1,6 @@
 /*
     // COLORS
-        primary and accent [purple]: #4B017A, #9B3DE3, #D3BDE9, #E1D5E9
+        primary and accent [purple]: #4B017A, #9C2CF3, #9B3DE3, #D3BDE9, #E1D5E9
         primary and accent [orange]: #FDB82D, #A68F60, #EBC276, #E8DCC7
         highlights: #57768A, #CBD2D4, #E3E7EA, #FEFEFE, #E8EDEE, #FDFDFD, 
             #F2F4F5, #ffffff, #F3EFE3 
@@ -22,6 +22,13 @@
 :root {
     --button-width: 70px;
     --button-height: 60px;
+
+    --random-color-primary: #ffffff;
+    --random-bg-color-primary: #9C2CF3;
+    --random-bg-color-primary-shadow: #9B3DE3;
+    --random-color-accent: #4B017A;
+    --random-bg-color-accent: #E1D5E9;
+    --random-bg-color-accent-shadow: #D3BDE9;
 }
 
 *, *::before, *::after {
@@ -108,16 +115,15 @@ button {
 
 .equal-button {
     font-size: 2.2rem;
-    background-color: #9C2CF3;
-    color: #ffffff;
-    box-shadow: 2.5px .52px 6px #9B3DE3, -4px -4px 4px #ffffff;
+    background-color: var(--random-bg-color-primary);
+    color: var(--random-color-primary);
+    box-shadow: 2.5px .52px 6px var(--random-bg-color-primary-shadow), -4px -4px 4px #ffffff;
 }
 
 .math_operation-button {
-    background-color: #E1D5E9;
-    color: #4B017A;
-    
-    box-shadow: 3px 3px 6px #D3BDE9, -4px -4px 4px #ffffff;
+    background-color: var(--random-bg-color-accent);
+    color: var(--random-color-accent);
+    box-shadow: 3px 3px 6px var(--random-bg-color-accent-shadow), -4px -4px 4px #ffffff;
 }
 
 .output-history {
