@@ -20,8 +20,8 @@
         - floating
 */
 :root {
-    --button-width: 70px;
-    --button-height: 60px;
+    --button-width: 60px;
+    --button-height: 50px;
 
     --random-color-primary: #ffffff;
     --random-bg-color-primary: #9C2CF3;
@@ -75,7 +75,7 @@ button {
     animation-duration: 5s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    margin: 15vh auto;
+    margin: 10vh auto;
     padding: 20px;
     border-radius: 20px;
     background: linear-gradient(to top, #E8EDEE, #FDFDFD);

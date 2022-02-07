@@ -1,45 +1,59 @@
-function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '';
-    for (var i=0; i<6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+'use strict';
+
+const root = document.getElementById('root');
+const main = document.createElement('main');
+
+const header = document.createElement('header');
+const section = document.createElement('section');
+const h1 = document.createElement('h1');
+const calcGrid = document.createElement('div');
+const output = document.createElement('div');
+const outputHistory = document.createElement('div');
+const outputResults = document.createElement('div');
+
+
+main.setAttribute('class', 'container');
+calcGrid.setAttribute('class', 'calc-grid');
+output.setAttribute('class', 'output');
+outputHistory.setAttribute('class', 'output-history');
+outputResults.setAttribute('class', 'output-results');
+
+h1.innerText = 'Calculator';
+
+root.appendChild(main);
+main.appendChild(h1);
+main.appendChild(section);
+section.appendChild(calcGrid);
+output.appendChild(outputHistory);
+output.appendChild(outputResults);
+calcGrid.appendChild(output);
+
+const buttonValues = ['C', '(', ')', 'x', '√', '%', '±', '÷', 7, 8, 9, '-', 4, 5, 6, '+', 1, 2, 3, '=', '.', 0, 'del'];
+
+buttonValues.forEach(el => {
+    let button = document.createElement('button');
+    button.innerText = `${el}`;
+    
+    switch (button.innerText) {
+        case 'C':
+            button.setAttribute('class', 'clear-button');
+            break;
+            case ')':
+                case '(':
+                case '√':
+                    case '%':
+                        case '±':
+                            button.setAttribute('class', 'non-functionable');
+                            break;
+                            case 'x':
+            case '÷':
+                case '-':
+                    case '+':
+                        button.setAttribute('class', 'math_operation-button');
+                        break;
+                        case '=':
+            button.setAttribute('class', 'span-2-vertical equal-button');
+            break;
     }
-    return color;
-}
-
-function request(method = 'GET', url) {
-    return new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.open(method, url);
-        xhr.onload = () => {
-            if (xhr.status === 200) {
-                resolve(JSON.parse(xhr.responseText));
-            } else {
-                reject(new Error('Error'));
-            }
-        }
-        xhr.send();
-    })
-}
-
-request('GET', `https://www.thecolorapi.com/scheme?hex=${getRandomColor()}`)
-    .then(data => {
-        let colors = [];
-        data.colors.forEach(el => {
-            colors.push(el.hex.value);
-        })
-        changeRandomColor(colors)
-    }).catch(err => console.log(err));
-
-
-function changeRandomColor(colors) {
-    const cssRootStyle = getComputedStyle(cssRoot);
-    cssRoot.style.setProperty('--random-color-primary', '#ffffff')
-    cssRoot.style.setProperty('--random-bg-color-primary', colors[2])
-    cssRoot.style.setProperty('--random-bg-color-primary-shadow', colors[1])
-    cssRoot.style.setProperty('--random-color-accent', colors[0])
-    cssRoot.style.setProperty('--random-bg-color-accent', colors[3])
-    cssRoot.style.setProperty('--random-bg-color-accent-shadow', colors[4])
-}
-
-const cssRoot = document.querySelector(':root');
+    calcGrid.appendChild(button);
+})

@@ -1,25 +1,25 @@
 
 button:active {
-    transition: box-shadow .06s;
-    box-shadow: 3px 3px 2px #CBD2D4, -3px -3px 6px #ffffff;
+    transition: box-shadow .01s;
+    box-shadow: 3px 3px 2px #ffffff, -1px -1px 4px #CBD2D4;
 }
 
 .non-functionable:active {
-    transition: box-shadow .06s;
-    box-shadow: 3px 3px 2px #E8DCC7, -4px -4px 4px #ffffff;
+    transition: box-shadow .01s;
+    box-shadow: 3px 3px 2px #ffffff, -1px -1px 4px #E8DCC7;
 }
 
 .clear-button:active {
     transition: box-shadow .1s;
-    box-shadow: 1px .56px 2px #EBC276, -4px -4px 4px #ffffff;
+    box-shadow: 4px 4px 2px #ffffff, -1px -1px 4px #d18800;
 }
 
 .equal-button:active {
     transition: box-shadow .1s;
-    box-shadow: 1px .56px 2px var(--random-bg-color-primary), -4px -4px 4px #ffffff;
+    box-shadow: 4px 4px 2px #ffffff, -1px -1px 4px var(--random-bg-color-primary-shadow);
 }
 
 .math_operation-button:active {
-    transition: box-shadow .06s;
-    box-shadow: 3px 3px 2px var(--random-bg-color-accent), -4px -4px 4px #ffffff;
+    transition: box-shadow .01s;
+    box-shadow: 4px 4px 2px #ffffff, -1px -1px 4px var(--random-bg-color-accent-shadow);
 }

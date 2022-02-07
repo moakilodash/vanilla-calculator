@@ -1,14 +1,14 @@
 @media only screen and (max-width: 450px) {
     :root {
-        --button-width: 50px;
-        --button-height: 40px;
+        --button-width: 45px;
+        --button-height: 35px;
     }
     .no-select {
         -webkit-tap-highlight-color: transparent;
     }
     .calc-grid {
-        animation-duration: 3s;
-        margin: 17vh auto;
+        animation-duration: 2.5s;
+        margin: 7vh auto;
     }
     h1 {
         margin: 40px 40px 0 40px;
