@@ -20,5 +20,5 @@ button:hover {
 
 .math_operation-button:hover {
     transition: box-shadow .42s ease-in-out;
-    box-shadow: 4px 4px 10px var(--random-bg-color-accent), -4px -4px 4px #ffffff;
+    box-shadow: 4px 4px 10px var(--random-bg-color-accent-shadow), -4px -4px 4px #ffffff;
 }

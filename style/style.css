@@ -19,21 +19,23 @@
     // ANIMATION
         - floating
 */
+
 :root {
     --button-width: 60px;
     --button-height: 50px;
 
-    --random-color-primary: #ffffff;
+    --random-color-primary: #FEFEFE;
     --random-bg-color-primary: #9C2CF3;
     --random-bg-color-primary-shadow: #9B3DE3;
     --random-color-accent: #4B017A;
     --random-bg-color-accent: #E1D5E9;
     --random-bg-color-accent-shadow: #D3BDE9;
+
+    --random-heading-color: #4B017A;
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
-    /* font-family: Roboto; */
     font-weight: 400;
     font-size: 1.1rem;
     -webkit-tap-highlight-color: transparent;
@@ -50,6 +52,7 @@ h1 {
     font-family: 'Comfortaa', sans-serif;
     margin: 40px;
     font-size: 1.5rem;
+    color: var(--random-heading-color);
 }
 
 button {
@@ -67,12 +70,11 @@ button {
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    height: 90vh;
 }
 
 .calc-grid {
     animation-name: floating-plate;
-    animation-duration: 5s;
+    animation-duration: 6s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     margin: 10vh auto;
@@ -88,13 +90,14 @@ button {
 
 .output {
     font-family: 'Roboto', sans-serif;
-    /* background-color: rgba(0,  0, 0, 0.041); */
     grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-around;
     padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
 }
 
 .span-2-vertical {
@@ -110,7 +113,7 @@ button {
 .clear-button {
     background-color: #FDB82D;
     box-shadow: 2.5px .52px 6px #EBC276, -4px -4px 4px #ffffff;
-    color: #ffffff;
+    color: #FEFEFE;
 }
 
 .equal-button {
@@ -123,16 +126,16 @@ button {
 .math_operation-button {
     background-color: var(--random-bg-color-accent);
     color: var(--random-color-accent);
-    box-shadow: 3px 3px 6px var(--random-bg-color-accent-shadow), -4px -4px 4px #ffffff;
+    box-shadow: 3px 3px 3px var(--random-bg-color-accent-shadow), -4px -4px 4px #ffffff;
 }
 
-.output-history {
+.output-previous {
     color:#CBD2D4;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
-.output-results {
+.output-current {
     font-size: 2.2rem;
     font-weight: 700;
 }
