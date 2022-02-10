@@ -24,14 +24,18 @@
     --button-width: 60px;
     --button-height: 50px;
 
-    --random-color-primary: #FEFEFE;
+    --random-color-primary: #FEFEFECC;
     --random-bg-color-primary: #9C2CF3;
     --random-bg-color-primary-shadow: #9B3DE3;
     --random-color-accent: #4B017A;
     --random-bg-color-accent: #E1D5E9;
     --random-bg-color-accent-shadow: #D3BDE9;
+    --random-bg-color-primary-tool: #E1D5E9;
+    --random-bg-color-accent-tool: #3B1AF305;
 
     --random-heading-color: #4B017A;
+
+    --section-width: 0;
 }
 
 *, *::before, *::after {
@@ -52,7 +56,7 @@ h1 {
     font-family: 'Comfortaa', sans-serif;
     margin: 40px;
     font-size: 1.5rem;
-    color: var(--random-heading-color);
+    color: #57768A;
 }
 
 button {
@@ -67,25 +71,58 @@ button {
     box-shadow: 3px 3px 6px #CBD2D4, -3px -3px 6px #ffffff;
 }
 
+section {
+    margin: 10vh auto;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.calc-grid {
+.floating-plate {
     animation-name: floating-plate;
     animation-duration: 6s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    margin: 10vh auto;
-    padding: 20px;
     border-radius: 20px;
     background: linear-gradient(to top, #E8EDEE, #FDFDFD);
+}
+
+.flex-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tool-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    height: fit-content;
+}
+
+.calc-grid {
     width: fit-content;
     display: grid;
     gap: 10px;
+    padding: 20px;
     grid-template-columns: repeat(4, var(--button-width));
-    grid-template-rows: minmax(120px, auto) repeat(6, var(--button-height))
+    grid-template-rows: minmax(120px, auto) repeat(6, var(--button-height)) minmax(20px, auto);
+}
+
+.tool-button {
+    color: #57768A;
+    background-color: var(--random-bg-color-accent-tool);
+    border-radius: 10px;
+    height: 40px;
+}
+
+.change-color-button {
+    color: var(--random-heading-color);
+    background-color: var(--random-bg-color-primary-tool);
 }
 
 .output {
@@ -95,13 +132,17 @@ button {
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-around;
-    padding: 10px;
+    padding: 1px;
     word-wrap: break-word;
     word-break: break-all;
 }
 
 .span-2-vertical {
     grid-row: span 2;
+}
+
+.span-4-h {
+    grid-column: span 4;
 }
 
 .non-functionable {

@@ -4,10 +4,10 @@ button:active {
     box-shadow: 3px 3px 2px #ffffff, -1px -1px 4px #CBD2D4;
 }
 
-.non-functionable:active {
+/* .non-functionable:active {
     transition: box-shadow .0s;
     box-shadow: 3px 3px 2px #ffffff, -1px -1px 4px #E8DCC7;
-}
+} */
 
 .clear-button:active {
     transition: box-shadow .0s;

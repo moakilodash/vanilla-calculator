@@ -1,7 +1,7 @@
 'use strict';
 
 
-import {calculator} from './app.js';
+import { calculator } from '../index.js';
 
 export function numberButtonEvent(button) {
     let numberButtons = [button];
@@ -26,7 +26,6 @@ export function operationButtonEvent(button) {
         button.addEventListener('click', () => {
             calculator.chooseOperation(button.innerText);
             calculator.render();
-            
         })
     })
 }

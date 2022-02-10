@@ -1,7 +1,7 @@
 'use strict';
 
 
-import {outputPrevious, outputCurrent} from './app.js';
+import { outputPrevious, outputCurrent } from '../index.js';
 
 export default class Calculator {
     constructor (outputPrevious, outputCurrent) {
