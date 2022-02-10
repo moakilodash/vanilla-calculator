@@ -5,12 +5,11 @@ import { clearButtonEvent, numberButtonEvent, operationButtonEvent, equalButtonE
 import { changeColorButtonFunc } from './render/randomColorGenerator.js';
 import Calculator from "./entity/Calculator.js";
 import { buttonValues } from "./tools/constants.js";
+import './assets/css/style.css';
+import './assets/css/hover.css';
 import './assets/css/active.css';
 import './assets/css/animation.css';
-import './assets/css/hover.css';
 import './assets/css/media-query.css';
-import './assets/css/style.css';
-import './assets/css/toast.css';
 
 
 const root = document.getElementById('root');
@@ -36,8 +35,8 @@ output.setAttribute('class', 'output');
 
 output.appendChild(outputPrevious);
 output.appendChild(outputCurrent);
-section.appendChild(toolBar)
 section.appendChild(calcGrid);
+section.appendChild(toolBar)
 calcGrid.appendChild(output);
 header.appendChild(h1);
 main.appendChild(header);
@@ -96,7 +95,7 @@ function removeToolBarButtons() {
 
 function addBtnFunc() {
     let innerText = prompt("innerText: ");
-    if (innerText === '') return;
+    if (innerText === '' || innerText === undefined) return;
     renderBtn(innerText, 'non-functionable');
     // memory.push(toolBar.lastChild);
     // console.log(memory);
