@@ -1,7 +1,7 @@
 'use strict';
 
 
-import { calculator } from '../index.js';
+import { calculator } from '../render/page.js';
 
 export function numberButtonEvent(button) {
     let numberButtons = [button];

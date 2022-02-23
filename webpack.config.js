@@ -27,11 +27,11 @@ const config = {
                 use: [MiniCssExtractPlugin.loader, "css-loader"]
             },
             {
-                test: /\.(png|jpe?g)$/,
+                test: /\.(png|jpe?g)$/i,
                 type: 'asset/resource'
             },
             {
-                test: /\.m?js$/,
+                test: /\.m?js$/i,
                 exclude: /node_modules/,
                 use: {
                   loader: "babel-loader",
@@ -44,7 +44,7 @@ const config = {
     },
     optimization: {
         minimizer:
-        [new CssMinimizerPlugin()]
+            [new CssMinimizerPlugin()]
     }
 }
 
