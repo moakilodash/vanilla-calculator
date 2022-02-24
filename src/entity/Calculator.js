@@ -64,7 +64,7 @@ export default class Calculator {
     render() {
         this.outputCurrent.innerText = this.outputCurrentText;
         if (this.operation !== undefined) {
-            this.outputPrevious.innerText = `${this.outputPreviousText} ${this.operation}`
+            this.outputPrevious.innerText = `${this.outputPreviousText} ${this.operation}`;
         } else {
             this.outputPrevious.innerText = this.outputPreviousText;
         }

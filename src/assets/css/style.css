@@ -43,6 +43,10 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+*:focus {
+    outline: none;
+}
+
 html, body{
     height:100%;
     width:100%;
@@ -50,7 +54,7 @@ html, body{
     background-color:#efefef;
     display: table;
     text-align: center;
-  }
+}
 
 body {
     padding: 0;

@@ -31,11 +31,11 @@ const changeColorBtn = renderBtn('CC', 'change-color-button', 'change-color-butt
 
 const initialBtns = [addBtn, clearBtn, changeColorBtn];
 // let memory = [];
-
 function renderBtn(innerText, className, idName, callback) {
     const button = document.createElement('button');
     button.setAttribute('class', ` ${className} tool-button`);
     button.setAttribute('id', idName);
+    button.setAttribute('tabindex', '-1'); // preventing tab indexing
     button.innerText = innerText;
     button.addEventListener('click', callback);
     toolBar.appendChild(button);
@@ -49,4 +49,3 @@ function renderBtn(innerText, className, idName, callback) {
 //     })
 // }
 // if (initialChildNodes.length === 3) restoreBtns();
-

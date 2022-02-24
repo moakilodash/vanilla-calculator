@@ -44,7 +44,7 @@ function changeRandomColor(colors) {
         $(':root').css('--random-color-accent', `${colors[0]}`);
         $(':root').css('--random-bg-color-accent-shadow', `${colors[3]}AA`);
         $(':root').css('--random-bg-color-accent', `${colors[4]}44`);
-        $(':root').css('--random-bg-color-primary-tool', `#${colors[5]}50`)
+        $(':root').css('--random-bg-color-primary-tool', `#${colors[5]}50`);
         $(':root').css('--random-bg-color-accent-tool', `#${colors[5]}10`);
     })
 }

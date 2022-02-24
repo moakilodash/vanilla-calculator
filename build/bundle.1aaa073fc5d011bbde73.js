@@ -101,6 +101,8 @@ function renderBtn(innerText, className, idName, callback) {
   var button = document.createElement('button');
   button.setAttribute('class', " ".concat(className, " tool-button"));
   button.setAttribute('id', idName);
+  button.setAttribute('tabindex', '-1'); // preventing tab indexing
+
   button.innerText = innerText;
   button.addEventListener('click', callback);
   toolBar.appendChild(button);
@@ -239,6 +241,66 @@ main.appendChild(header);
 main.appendChild(section);
 root.appendChild(main);
 var calculator = new Calculator(outputPrevious, outputCurrent);
+;// CONCATENATED MODULE: ./src/tools/constants.js
+var buttonValues = ['C', '(', ')', 'x', '√', '%', '±', '÷', 7, 8, 9, '-', 4, 5, 6, '+', 1, 2, 3, '=', '.', 0, 'del'];
+var digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+;// CONCATENATED MODULE: ./src/tools/keylogger.js
+
+
+
+
+function keyLogger(key) {
+  switch (key) {
+    case 'c':
+    case 'Delete':
+      calculator.clear();
+      calculator.render();
+
+    case 'x':
+    case '*':
+      calculator.chooseOperation('x');
+      calculator.render();
+      break;
+
+    case '/':
+      calculator.chooseOperation('÷');
+      calculator.render();
+      break;
+
+    case '-':
+      calculator.chooseOperation('-');
+      calculator.render();
+      break;
+
+    case '+':
+      calculator.chooseOperation('+');
+      calculator.render();
+      break;
+
+    case 'Enter':
+    case '=':
+      calculator.compute();
+      calculator.render();
+      break;
+
+    case 'Backspace':
+      calculator["delete"]();
+      calculator.render();
+      break;
+    // case ')':
+    // case '(':
+    // case '√':
+    // case '%':
+    // case '±':
+
+    default:
+      if (key.includes('.') || digits.includes(key)) {
+        calculator.appendNumber(key);
+        calculator.render();
+      }
+
+  }
+}
 ;// CONCATENATED MODULE: ./src/tools/functionPool.js
 
 
@@ -279,8 +341,58 @@ function deleteButtonEvent(button) {
     calculator.render();
   });
 }
-;// CONCATENATED MODULE: ./src/tools/constants.js
-var buttonValues = ['C', '(', ')', 'x', '√', '%', '±', '÷', 7, 8, 9, '-', 4, 5, 6, '+', 1, 2, 3, '=', '.', 0, 'del'];
+;// CONCATENATED MODULE: ./src/render/buttons.js
+
+
+
+
+
+function renderButton() {
+  buttonValues.forEach(function (el) {
+    var button = document.createElement('button');
+    button.innerText = "".concat(el);
+
+    switch (el) {
+      case 'C':
+        button.setAttribute('class', 'clear-button');
+        clearButtonEvent(button);
+        break;
+
+      case ')':
+      case '(':
+      case '√':
+      case '%':
+      case '±':
+        button.setAttribute('class', 'non-functionable');
+        break;
+
+      case 'x':
+      case '÷':
+      case '-':
+      case '+':
+        button.setAttribute('class', 'math_operation-button');
+        operationButtonEvent(button);
+        break;
+
+      case '=':
+        button.setAttribute('class', 'span-2-vertical equal-button');
+        equalButtonEvent(button);
+        break;
+
+      case 'del':
+        deleteButtonEvent(button);
+        break;
+
+      default:
+        button.setAttribute('id', 'number-buttons');
+        numberButtonEvent(button);
+    }
+
+    button.setAttribute('tabindex', '-1'); // preventing tab indexing
+
+    calcGrid.appendChild(button);
+  });
+}
 ;// CONCATENATED MODULE: ./src/index.js
 
 
@@ -290,49 +402,18 @@ var buttonValues = ['C', '(', ')', 'x', '√', '%', '±', '÷', 7, 8, 9, '-', 4,
 
 
 
+ // rendering buttons
 
+renderButton(); // preventing enter key to submit
 
-buttonValues.forEach(function (el) {
-  var button = document.createElement('button');
-  button.innerText = "".concat(el);
-
-  switch (button.innerText) {
-    case 'C':
-      button.setAttribute('class', 'clear-button');
-      clearButtonEvent(button);
-      break;
-
-    case ')':
-    case '(':
-    case '√':
-    case '%':
-    case '±':
-      button.setAttribute('class', 'non-functionable');
-      break;
-
-    case 'x':
-    case '÷':
-    case '-':
-    case '+':
-      button.setAttribute('class', 'math_operation-button');
-      operationButtonEvent(button);
-      break;
-
-    case '=':
-      button.setAttribute('class', 'span-2-vertical equal-button');
-      equalButtonEvent(button);
-      break;
-
-    case 'del':
-      deleteButtonEvent(button);
-      break;
-
-    default:
-      button.setAttribute('id', 'number-buttons');
-      numberButtonEvent(button);
+document.addEventListener('keydown', function (el) {
+  if (el.keyCode == 13) {
+    el.preventDefault();
   }
+}); // keyLogger
 
-  calcGrid.appendChild(button);
+document.addEventListener('keydown', function (el) {
+  keyLogger(el.key);
 });
 /******/ })()
 ;
