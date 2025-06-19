@@ -1,0 +1,192 @@
+/*
+    // COLORS
+        primary and accent [purple]: #4B017A, #9C2CF3, #9B3DE3, #D3BDE9, #E1D5E9
+        primary and accent [orange]: #FDB82D, #A68F60, #EBC276, #E8DCC7
+        highlights: #57768A, #CBD2D4, #E3E7EA, #FEFEFE, #E8EDEE, #FDFDFD, 
+            #F2F4F5, #ffffff, #F3EFE3 
+
+    // FONT
+        family: Roboto, Comfortaa
+        weight: 300, 400, 500, 700, 900
+        size: 1.2rem, 2,2rem,
+
+    // MARGIN, PADDING
+        10px, 20px, 40px, 100px
+
+    // RADIUS
+        38px, 20px
+
+    // ANIMATION
+        - floating
+*/
+
+:root {
+    --button-width: 60px;
+    --button-height: 50px;
+
+    --random-color-primary: #FEFEFECC;
+    --random-bg-color-primary: #9C2CF3;
+    --random-bg-color-primary-shadow: #9B3DE3;
+    --random-color-accent: #4B017A;
+    --random-bg-color-accent: #E1D5E9;
+    --random-bg-color-accent-shadow: #D3BDE9;
+    --random-bg-color-primary-tool: #E1D5E9;
+    --random-bg-color-accent-tool: #3B1AF305;
+
+    --random-heading-color: #4B017A;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-weight: 400;
+    font-size: 1.1rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+*:focus {
+    outline: none;
+}
+
+html, body{
+    height:100%;
+    width:100%;
+    font-family: 'Raleway', sans-serif;
+    background-color:#efefef;
+    display: table;
+    text-align: center;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to top, #E3E7EA, #FEFEFE);
+}
+
+h1 {
+    font-family: 'Comfortaa', sans-serif;
+    margin: 40px;
+    font-size: 1.5rem;
+    color: #57768A;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-weight: 300;
+    background-color: #F2F4F5;
+    color: #57768A;
+    display: inline-block;
+    font-size: 1.2rem;
+    border-radius: 38px;
+    box-shadow: 3px 3px 6px #CBD2D4, -3px -3px 6px #ffffff;
+}
+
+section {
+    margin: 10vh auto;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.floating-plate {
+    animation-name: floating-plate;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    border-radius: 20px;
+    background: linear-gradient(to top, #E8EDEE, #FDFDFD);
+}
+
+.flex-2 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tool-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    height: fit-content;
+}
+
+.calc-grid {
+    width: fit-content;
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+    grid-template-columns: repeat(4, var(--button-width));
+    grid-template-rows: minmax(120px, auto) repeat(6, var(--button-height)) minmax(20px, auto);
+}
+
+.tool-button {
+    color: #57768A;
+    background-color: var(--random-bg-color-accent-tool);
+    border-radius: 10px;
+    height: 40px;
+}
+
+.change-color-button {
+    color: var(--random-heading-color);
+    background-color: var(--random-bg-color-primary-tool);
+}
+
+.output {
+    font-family: 'Roboto', sans-serif;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 1px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.span-2-vertical {
+    grid-row: span 2;
+}
+
+.span-4-h {
+    grid-column: span 4;
+}
+
+.non-functionable {
+    background-color: #F3EFE3;
+    color: #A68F60;
+    box-shadow: 3px 3px 6px #E8DCC7, -4px -4px 4px #ffffff;
+}
+
+.clear-button {
+    background-color: #FDB82D;
+    box-shadow: 2.5px .52px 6px #EBC276, -4px -4px 4px #ffffff;
+    color: #FEFEFE;
+}
+
+.equal-button {
+    font-size: 2.2rem;
+    background-color: var(--random-bg-color-primary);
+    color: var(--random-color-primary);
+    box-shadow: 2.5px .52px 6px var(--random-bg-color-primary-shadow), -4px -4px 4px #ffffff;
+}
+
+.math_operation-button {
+    background-color: var(--random-bg-color-accent);
+    color: var(--random-color-accent);
+    box-shadow: 3px 3px 3px var(--random-bg-color-accent-shadow), -4px -4px 4px #ffffff;
+}
+
+.output-previous {
+    color:#CBD2D4;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.output-current {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
